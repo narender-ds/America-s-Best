@@ -1,4 +1,5 @@
 import { Wrapper } from "@googlemaps/react-wrapper";
+// import { Result, useAnswersState } from '@yext/answers-headless-react';
 import {
   useSearchState,
   Result,
@@ -10,11 +11,11 @@ import {
   twMerge,
   useComposedCssClasses,
 } from "../../hooks/useComposedCssClasses";
-import Mapicon2 from "../../images/MGMpin.svg";
-// import clustericon from "../../images/cluster.png";
-// import mapimage from "../../images/map.svg";
-// import timesvg from "../../images/watch-icn.svg";
-import Hovermap from "../../images/MGMhover1.svg"
+import Mapicon2 from "../../images/mapdesign.svg";
+import clustericon from "../../images/cluster.png";
+import mapimage from "../../images/map.svg";
+import timesvg from "../../images/watch-icn.svg";
+import Hovermap from "../../images/MGMhover1.svg";
 import Hours from "../commons/hours";
 import reactElementToJSXString from "react-element-to-jsx-string";
 import Nav from "../layouts/Nav";
@@ -25,14 +26,14 @@ import Opening from "../commons/openClose";
 import GetDirection from "../commons/GetDirection";
 import { MarkerClusterer } from "@googlemaps/markerclusterer";
 import Address from "../commons/Address";
-import Phones from "../../images/phone.svg";
+import Phonesvg from "../../images/phone.svg";
+import redmapimage from "../../images/red-map.svg";
 import { ResultsCount } from "@yext/search-ui-react";
 import OpenClose from "../commons/openClose";
 import $ from "jquery";
 import { Directionsvg, View_Store } from "../../../sites-global/global";
 import { StaticData } from "../../../sites-global/staticData";
 import useFetchResults from "../../hooks/useFetchResults";
-import { Link } from "@yext/pages/components";
 /**
  * CSS class interface for the {@link GoogleMaps} component
  *
@@ -119,31 +120,27 @@ function UnwrappedGoogleMaps({
 
   const refLocationResults = useRef({});
 
-  // const locationResults = useSearchState(state => state.vertical?.results) || [];
+  // const locationResults = useSearchState((state) => state.vertical?.results) || [];
   const locationResults = useFetchResults() || [];
-
-
-
-
   refLocationResults.current = locationResults;
 
   locationResults.length > 0
     ? locationResults.map((result: any, i: number) => {
-      if (i == 0 && result) {
-        center = {
-          lat: result.rawData.yextDisplayCoordinate
-            ? result.rawData.yextDisplayCoordinate.latitude
-            : result.rawData.displayCoordinate.latitude,
-          lng: result.rawData.yextDisplayCoordinate
-            ? result.rawData.yextDisplayCoordinate.longitude
-            : result.rawData.displayCoordinate.longitude,
-        };
-      }
-    })
+        if (i == 0 && result) {
+          center = {
+            lat: result.rawData.yextDisplayCoordinate
+              ? result.rawData.yextDisplayCoordinate.latitude
+              : result.rawData.displayCoordinate.latitude,
+            lng: result.rawData.yextDisplayCoordinate
+              ? result.rawData.yextDisplayCoordinate.longitude
+              : result.rawData.displayCoordinate.longitude,
+          };
+        }
+      })
     : (center = {
-      lat: centerLatitude,
-      lng: centerLongitude,
-    });
+        lat: centerLatitude,
+        lng: centerLongitude,
+      });
 
   let info = false;
   const cssClasses = useComposedCssClasses(builtInCssClasses, customCssClasses);
@@ -174,11 +171,11 @@ function UnwrappedGoogleMaps({
     strokeWeight: 1,
     labelOrigin: new google.maps.Point(21, 22),
   };
-  function zoomMapTo(zoomTo: number, centerToSet: false) {
-    currentMapZoom = map?.getZoom();
+  function zoomMapTo(zoomTo, centerToSet = false) {
+    currentMapZoom = map.getZoom();
     const newZoom =
       currentMapZoom > zoomTo ? currentMapZoom - 1 : currentMapZoom + 1;
-    map?.setZoom(newZoom);
+    map.setZoom(newZoom);
     if (newZoom != zoomTo && !stopAnimation)
       sleep(200).then(() => {
         zoomMapTo(zoomTo, centerToSet);
@@ -186,10 +183,10 @@ function UnwrappedGoogleMaps({
     if (newZoom == zoomTo) {
       stopAnimation = false;
       if (centerToSet) {
-        if (typeof map?.panTo != "undefined") {
+        if (typeof map.panTo != "undefined") {
           map.panTo(centerToSet);
         } else {
-          map?.setCenter(centerToSet);
+          map.setCenter(centerToSet);
         }
       }
     }
@@ -214,7 +211,7 @@ function UnwrappedGoogleMaps({
   const Usermarker1 = new google.maps.Marker({
     position,
     map,
-    icon: UserMarker
+    icon: UserMarker,
   });
   usermarker.current.push(Usermarker1);
 
@@ -222,7 +219,7 @@ function UnwrappedGoogleMaps({
     if (mapMarkerClusterer) {
       mapMarkerClusterer.clearMarkers();
     }
-  } catch (e) { }
+  } catch (e) {}
   let i = 0;
   for (const result of locationResults) {
     i++;
@@ -231,11 +228,10 @@ function UnwrappedGoogleMaps({
       position,
       map,
       icon: Mapicon2,
-      label: {  //open letter
-        text: String(i),
-        color: "white",
-     },
-      
+      // label: {
+      //   text: String(i),
+      //   color: "white",
+      // },
       // animation: google.maps.Animation.DROP
     });
 
@@ -249,25 +245,24 @@ function UnwrappedGoogleMaps({
 
     mapMarkerClusterer = new MarkerClusterer({
       map,
-      markers
-    })
-    //   renderer: {
-    //     render: ({ markers, position: position }) => {
-    //       return new google.maps.Marker({
-    //         position: {
-    //           lat: position.lat(),
-    //           lng: position.lng(),
-    //         },
-    //         icon: clustericon,
-    //         label: {
-    //           text: String(markers?.length),
-    //           color: "white",
-    //         },
-    //           //animation: google.maps.Animation.DROP, //open letter
-    //       });
-    //     },
-    //   },
-    // });
+      markers,
+      renderer: {
+        render: ({ markers, position: position }) => {
+          return new google.maps.Marker({
+            position: {
+              lat: position.lat(),
+              lng: position.lng(),
+            },
+            icon: clustericon,
+            label: {
+              text: String(markers?.length),
+              color: "white",
+            },
+            //  animation: google.maps.Animation.DROP,
+          });
+        },
+      },
+    });
   }
 
   useEffect(() => {
@@ -283,7 +278,6 @@ function UnwrappedGoogleMaps({
         })
       );
     } else if (markers1.current.length > 0 && map && check && hover) {
-
       setTimeout(function () {
         const bounds = new google.maps.LatLngBounds();
 
@@ -322,9 +316,8 @@ function UnwrappedGoogleMaps({
       setHover(false);
       if (!info) {
         markers1.current[i].setIcon(Hovermap);
-
       }
-      locationResults.map((result: any, index: number) => {
+      locationResults.map((result, index) => {
         if (i == index) {
           const resultelement = document.querySelectorAll(
             `.result-list-inner-${index + 1}`
@@ -334,7 +327,7 @@ function UnwrappedGoogleMaps({
             resultelement[index].classList.add("fixed-hover");
           }
           const position = getPosition(locationResults[index]);
-          map?.setCenter(position);
+          map.setCenter(position);
           Infowindow(i, result);
           scrollToRow(index);
         }
@@ -366,17 +359,14 @@ function UnwrappedGoogleMaps({
       setHover(true);
       info = false;
       infoWindow.current.close();
-
-
-      locationResults.map((result: any, index: number) => {
+      locationResults.map((result, index) => {
         const resultelement = document.querySelectorAll(
           `.result-list-inner-${index + 1}`
         );
         for (let index = 0; index < resultelement.length; index++) {
-          resultelement[index].classList.remove("fixed hover");
+          resultelement[index].classList.remove("active", "fixed-hover");
         }
       });
-
       map?.setZoom(10);
     });
   }
@@ -386,7 +376,7 @@ function UnwrappedGoogleMaps({
   }
 
   const hours = (result: any) => {
-    return <Hours hours={result} c_specific_day={undefined} />;
+    return <Hours hours={result} />;
   };
   function addActiveGrid(index: any) {
     const elements = document.querySelectorAll(".result");
@@ -448,7 +438,7 @@ function UnwrappedGoogleMaps({
             }
             $(".result").removeClass("fixed-hover");
             // console.log('refLocationResults', refLocationResults);
-            refLocationResults?.current?.map((result: any, i: number) => {
+            refLocationResults.current.map((result, i) => {
               if (i == index) {
                 setHover(false);
                 isHover = false;
@@ -457,21 +447,7 @@ function UnwrappedGoogleMaps({
                 }
                 document
                   .querySelectorAll(".result")
-                [index].classList.add("fixed-hover");
-
-                if (infoWindow.current != null) {          // for remove class after close infowindow
-                  infoWindow.current.addListener("closeclick", () => {
-                    setHover(true);
-                    info = false;
-                    infoWindow.current.close();
-                    const resultelement = document.querySelectorAll(
-                      ".result"
-                    );
-                    resultelement[index].classList.remove("active","fixed-hover");
-                  });
-                  map?.setZoom(10);
-                }
-
+                  [index].classList.add("fixed-hover");
                 addActiveGrid(index);
                 const position = {
                   lat: result.rawData.yextDisplayCoordinate
@@ -487,7 +463,6 @@ function UnwrappedGoogleMaps({
                 Infowindow(i, result);
                 infoWindow.current.open(map, markers1.current[index]);
               }
-
             });
           }
         });
@@ -499,46 +474,54 @@ function UnwrappedGoogleMaps({
     return miles.toFixed(2);
   };
 
-
   function Infowindow(i: number, result: any): void {
     info = true;
-    let url = "";
-    const name: any = result.rawData.name?.toLowerCase();
-    const region: any = result.rawData.address.region?.toLowerCase();
-    const initialregion: any = region.toString();
-    const finalregion: any = initialregion.replaceAll(" ", "-");
-    const city: any = result.rawData.address.city?.toLowerCase();
-    const initialrcity: any = city.toString();
-    const finalcity: any = initialrcity.replaceAll(" ", "-");
-    const string1: any = name.toString();
-    const result1: any = string1.replaceAll(" ", "-");
-    if (!result.rawData.slug) {
-      url = `${result.rawData.id}-${result1}`;
-    } else {
-      // url = `${result.rawData.slug.toString()}`;
-      let countrycode = `${result.rawData?.address?.countryCode?.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')}`;
-      let statecode = `${result.rawData?.address?.region?.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')}`;
-      let citycode = `${result.rawData?.address?.city?.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')}`;
-      url = `${countrycode + "/" + statecode + "/" + citycode + "/" + result.rawData.slug?.toString()}`;
-    }
-
+      let url;
+    var name: any = result.rawData.name?.toLowerCase();
+    var countryCode: any = result.rawData.address.countryCode?.toLowerCase();
+    var initialcountryCode: any = countryCode.toString();
+    var finalcountryCode: any = initialcountryCode.replaceAll(" ", "-");
+  var region: any = result.rawData.address.region?.toLowerCase();
+  var initialregion: any = region.toString();
+  var finalregion: any = initialregion.replaceAll(" ", "-");
+  var city: any = result.rawData.address.city?.toLowerCase();
+  var initialrcity: any = city.toString();
+  var finalcity: any = initialrcity.replaceAll(" ", "-");
+  var string1: any = name.toString();
+  let result1: any = string1.replaceAll(" ", "-");
+  let newurl=finalcountryCode+"/"+finalregion+"/"+finalcity+"/"+result1+".html"
+ if (!result.rawData.slug) {
+  url= newurl;
+ } else {
+  //  url= `/${result.rawData.slug.toString()}.html`;
+  url=newurl;
+ }
     const MarkerContent = (
       <>
         {" "}
-        <div className="flex w-full flex-col max-w-[24rem] pl-4  md:w-[22.5rem] text-xs sm:text-sm lg:text-base">
-          <div className="location-name-miles">
-            {/* <div className="icon"> <img className=" " src={mapimage} width="20" height="20"
-        alt="" /></div> */}
+        <div className="flex w-full flex-col max-w-[24rem] pl-4  md:w-[22.5rem] font-main-font text-xs sm:text-sm lg:text-base">
+          <div className="location-name-miles icon-row">
+            <div className="icon text-black relative">
+              {" "}
+              <img
+                className=" "
+                src={redmapimage}
+                width="20"
+                height="20"
+                alt={""}
+              />
+              {/* <span className="map-count"></span> */}
+            </div>
             <h2>
-              <a className="inline-block notHighlight" href={`/${url}`}>
+              <a
+                className="inline-block notHighlight"
+                href={url}
+              >
                 {result.rawData.name}
               </a>
             </h2>
-          </div>
-          <div className="content-col info-window-content">
-            <Address address={result.rawData.address} />
             {result.distance ? (
-              <div className="distance">
+              <div className="distance text-[green]">
                 {metersToMiles(result.distance ?? 0)}{" "}
                 <span>{StaticData.miles}</span>
               </div>
@@ -546,21 +529,52 @@ function UnwrappedGoogleMaps({
               ""
             )}
           </div>
-          {/* {result.rawData.mainPhone?
-    <div className="icon-row">
-      <div className="icon"> <img className=" " src={Phonesvg} width="20" height="20" alt="" />
-      </div>
-      <div className="content-col">
-        <h6>Telephone</h6>
-        <a id="address" className="notHighlight" href={`tel:${result.rawData.mainPhone}`}>
-          {result.rawData.mainPhone}</a>
-      </div>
-    </div>:''} */}
+          <div className="icon-row content-col address-with-availablity notHighlight">
+            <Address address={result.rawData.address} />
+          </div>
+
+          {result.rawData.mainPhone ? (
+            <div className="icon-row">
+              <div className="icon">
+                {" "}
+                <img
+                  className=" "
+                  src={Phonesvg}
+                  width="20"
+                  height="20"
+                  alt=""
+                />
+              </div>
+              <div className="content-col">
+                <h6>Telephone</h6>
+                <a
+                  id="address"
+                  className="notHighlight"
+                  href={`tel:${result.rawData.mainPhone}`}
+                >
+                  {result.rawData.mainPhone}
+                </a>
+              </div>
+            </div>
+          ) : (
+            ""
+          )}
 
           {result.rawData.hours && result.rawData.hours.reopenDate ? (
             ""
           ) : result.rawData.hours ? (
-            <div className="">
+            <div className="icon-row">
+              <div className="icon">
+                {" "}
+                <img
+                  className=" "
+                  src={timesvg}
+                  width="20"
+                  height="20"
+                  alt=""
+                />{" "}
+              </div>
+              <h6>Opening Hours</h6>
               <OpenClose
                 timezone={result.rawData.timezone}
                 hours={result.rawData.hours}
@@ -591,8 +605,8 @@ function UnwrappedGoogleMaps({
           )}
         </div>
         <div className="button-bx !ml-4 !mb-0">
-          <a type="button" href={`/${url}`} className="btn">
-          
+          <a type="button" href={url} className="btn">
+            {/* <div dangerouslySetInnerHTML={{__html: View_Store}}/> */}
             {StaticData.StoreDetailbtn}
           </a>
           {result.rawData.displayCoordinate ? (
@@ -606,7 +620,7 @@ function UnwrappedGoogleMaps({
               data-country={result.rawData.address.countryCode}
               data-region={result.rawData.address.region}
             >
-            
+              {/* <div dangerouslySetInnerHTML={{__html: Directionsvg}}/> */}
               {StaticData.getDirection}
             </a>
           ) : (
@@ -620,11 +634,12 @@ function UnwrappedGoogleMaps({
               className="cursor-pointer getdirection1 btn"
               rel="noopener noreferrer"
             >
-             
+              {/* <div dangerouslySetInnerHTML={{__html: Directionsvg}}/> */}
               {StaticData.getDirection}
             </a>
           )}
 
+          {/* <GetDirection buttonText="Direction" latitude={result.rawData.displayCoordinate?.latitude} longitude={result.rawData.displayCoordinate?.longitude}/> */}
         </div>
       </>
     );

@@ -46,9 +46,11 @@ export default function Nearby(props: any) {
         }}
       >
       {neabyData.map((location: any, index: Number) => {
-
-let url = "";
-var name: any = location.data.name?.toLowerCase();
+ let url;
+ var name: any = location.data.name?.toLowerCase();
+ var countryCode: any = location.data.address.countryCode?.toLowerCase();
+ var initialcountryCode: any = countryCode.toString();
+ var finalcountryCode: any = initialcountryCode.replaceAll(" ", "-");
 var region: any = location.data.address.region?.toLowerCase();
 var initialregion: any = region.toString();
 var finalregion: any = initialregion.replaceAll(" ", "-");
@@ -57,14 +59,12 @@ var initialrcity: any = city.toString();
 var finalcity: any = initialrcity.replaceAll(" ", "-");
 var string: any = name.toString();
 let result1: any = string.replaceAll(" ", "-");
-if (!location.data.slug) {
-  url = `${location.data.id}-${result1}`;
+let newurl=finalcountryCode+"/"+finalregion+"/"+finalcity+"/"+result1+".html"
+if (! location.data.slug) {
+url= newurl;
 } else {
-  // url = `${location.data.slug.toString()}`;
-  let countrycode = `${location.data?.address?.countryCode?.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')}`;
-  let statecode = `${location.data?.address?.region?.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')}`;
-  let citycode = `${location.data?.address?.city?.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')}`;
-  url = `${countrycode + "/" + statecode + "/" + citycode + "/" + location.data.slug?.toString()}`;
+//  url= `/${result.rawData.slug.toString()}.html`;
+url=newurl;
 }
 
         if (index > 0) {
@@ -77,7 +77,13 @@ if (!location.data.slug) {
                     data-ya-track={`${location.data.name}`}
                     eventName={`${location.data.name}`}
                     rel="noopener noreferrer"><b> {location.data.name}</b></Link></h2>
-
+{location.distance ? (
+                    <div className="distance text-[green]">
+                      {metersToMiles(location.distance ?? 0)} <span>miles</span>
+                    </div>
+                  ) : (
+                    ""
+                  )}
                 </div>
                
                 <div className="icon-row closeing-div">
