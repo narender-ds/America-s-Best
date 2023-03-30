@@ -23,8 +23,8 @@ import ViewMore from "./ViewMore";
 import VerticalResults from "../VerticalResults";
 import ResultsCount from "./ResultsCount";
 import useFetchResults from "../../hooks/useFetchResults";
-import { Link } from "@mui/material";
 import { AnswerExperienceConfig } from "../../config/answersHeadlessConfig";
+import { Link } from "@yext/pages/components";
 
 var params1: any = { latitude: center_latitude, longitude: center_longitude }
 var mapzoom = 8;
@@ -251,17 +251,19 @@ const SearchLayout = (props: any): JSX.Element => {
       {/* <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZNQlSlEIkFAct5VzUtsP4dSbvOr2bE18&libraries=places&callback=initMap"></script> */}
 
       {/* {loader} */}
-      {/* <div className="breadcrumb">
+      <div className="breadcrumb">
         <div className="container-custom">
           <ul>
             <li>
-              <a href="#" className="home"> Home</a>
+            <Link className="home" href="/" eventName={`home-cta`}>
+              <div dangerouslySetInnerHTML={{ __html: breadcrumbhome }} />
+            </Link>
             </li>
             <li>{StaticData.locator_breadcrumb}</li>
           </ul>
 
         </div>
-      </div> */}
+      </div>
       <div className="locator-main">
         {allowlocation.length > 0 ?
           <div className="for-allow">{allowlocation}</div>
