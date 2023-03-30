@@ -16,6 +16,8 @@ import { Link } from "@yext/pages/components";
 import detail from "../../images/detail.svg";
 import facilities from "../../images/facilities.png";
 import Facilities from "../locationDetail/Facilities";
+import Model from "../locationDetail/Model";
+import Holidayhours from "../locationDetail/Holdayhours";
 
 const metersToMiles = (meters: number) => {
   const miles = meters * 0.000621371;
@@ -167,6 +169,8 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                           alt=""
                         />{" "}
                       </div>
+                      <div><Model name={StaticData.Holdiay}
+                      holidayHours={result.rawData.hours?.holidayHours}/></div>
                       {/* {StaticData.openingHours} */}
                       <div
                         className=" cursor-pointer  flex open-now-string items-center "
