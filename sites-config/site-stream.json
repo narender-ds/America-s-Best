@@ -1,0 +1,26 @@
+{
+  "$id": "ce_headerFooter",
+  "filter": {
+    "entityIds": ["global_Layouts"]
+  },
+  "source": "knowledgeGraph",
+  "fields": [
+      "name",
+     "c_headerLogo",
+    "c_headerMenus",
+    "c_examScheduleCta",
+    "c_navBar",
+    "c_footerSlogan",
+    "c_footerSocialIcons",
+    "c_footerMenu",
+    "c_otherFooterLinks",
+    "c_footerTermsConditionsLines",
+    "c_upperHeaderCta",
+    "c_upperHeaderText"
+
+  ],
+  "localization": {
+    "locales": ["en"],
+    "primary": false
+  }
+}
