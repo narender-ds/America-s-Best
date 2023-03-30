@@ -53,7 +53,6 @@ import {
 } from "@yext/pages/components";
 import FeaturesBrand from "../components/locationDetail/FeaturesBrand";
 import { Fade, Slide } from "react-awesome-reveal";
-import MgmTimber from "../components/locationDetail/MgmTimber";
 import { AnswerExperienceConfig } from "../config/answersHeadlessConfig";
 import StickHeader from "../components/locationDetail/StickHeader";
 import Brands from "../components/locationDetail/Brands";
@@ -82,12 +81,12 @@ export const config: TemplateConfig = {
       "displayCoordinate",
       "cityCoordinate",
       "c_bannerImage",
-            /* DM fields */
-            "dm_directoryParents.name",
-            "dm_directoryParents.slug",
-            "dm_directoryParents.meta.entityType",
-            "dm_directoryParents.c_addressRegionDisplayName",
-            "dm_directoryParents.dm_baseEntityCount",
+      /* DM fields */
+      "dm_directoryParents.name",
+      "dm_directoryParents.slug",
+      "dm_directoryParents.meta.entityType",
+      "dm_directoryParents.c_addressRegionDisplayName",
+      "dm_directoryParents.dm_baseEntityCount",
       "c_ctaForScheduleEyeExam",
       "c_lLCTitle",
       "c_categoryItems",
@@ -103,7 +102,7 @@ export const config: TemplateConfig = {
       "c_brandPhotos",
       "c_faqRelation.name",
       "c_faqRelation.answer",
-      "c_faqTitle"
+      "c_faqTitle",
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
@@ -127,12 +126,12 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
   var url = "";
   var name: any = document.name.toLowerCase();
   var string: any = name.toString();
-  let result: any = string.replaceAll(" ","-");
+  let result: any = string.replaceAll(" ", "-");
   document.dm_directoryParents.map((result: any, i: Number) => {
     if (i > 0) {
-      url += result.name + "/"
+      url += result.name + "/";
     }
-  })
+  });
   if (!document.name) {
     url += `${result}.html`;
   } else {
@@ -140,7 +139,7 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
     url += `${result}.html`;
   }
 
-  return url.replaceAll(" ","-").toLocaleLowerCase();
+  return url.replaceAll(" ", "-").toLocaleLowerCase();
   //   return document.id.toString() + ".html";
 };
 /**
@@ -387,7 +386,6 @@ const Location: Template<ExternalApiRenderData> = ({
         document.dm_directoryParents[index].slug =
           document.dm_directoryParents[index].slug;
 
-
         breadcrumbScheme.push({
           "@type": "ListItem",
           position: index,
@@ -515,18 +513,18 @@ const Location: Template<ExternalApiRenderData> = ({
                 />
               </div>
               <BreadCrumbs
-              name={name}
-              parents={dm_directoryParents}
-              baseUrl={relativePrefixToRoot}
-              address={address}
-            ></BreadCrumbs>
+                name={name}
+                parents={dm_directoryParents}
+                baseUrl={relativePrefixToRoot}
+                address={address}
+              ></BreadCrumbs>
               <div className="location-information">
                 <div className="container">
                   <div className="banner-text banner-dark-bg justify-center text-left">
                     <h1 className="entity-name">{name}</h1>
-                    <div className="openClosestatus detail-page closeing-div">
+                    {/* <div className="openClosestatus detail-page closeing-div">
                       <OpenClose timezone={timezone} hours={hours} />
-                    </div>
+                    </div> */}
                   </div>
                 </div>
                 <div className="hero-container">
@@ -545,6 +543,7 @@ const Location: Template<ExternalApiRenderData> = ({
                         : displayCoordinate?.longitude
                     }
                     hours={hours}
+                    timezone={timezone}
                     additionalHoursText={additionalHoursText}
                     textScheduleTest={c_ctaForScheduleEyeExam.label}
                     c_lLCTitle={c_lLCTitle}
@@ -585,9 +584,9 @@ const Location: Template<ExternalApiRenderData> = ({
               yextDisplayCoordinate={yextDisplayCoordinate}
             />
 
-            <Brands c_brandPhotos={c_brandPhotos} c_brandTitle={c_brandTitle}/> 
+            <Brands c_brandPhotos={c_brandPhotos} c_brandTitle={c_brandTitle} />
 
-<div className="container-custom mx-auto">
+            <div className="container-custom mx-auto">
               <FaqAccordian Question={c_faqRelation} Title={c_faqTitle} />
             </div>
             <div className="nearby-sec">

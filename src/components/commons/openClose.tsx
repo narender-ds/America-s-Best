@@ -233,7 +233,7 @@ export const OpenStausFunctions = {
                 {"Opens at "}
                 <span className="lowercase">
                   {OpenStausFunctions.formatTime(nextInterval.start).replace(
-                    ":00",
+                    "",
                     ""
                   )}
                 </span>
@@ -252,7 +252,7 @@ export const OpenStausFunctions = {
                 {"Opens at "}
                 <span className="lowercase">
                   {OpenStausFunctions.formatTime(nextInterval.start).replace(
-                    ":00",
+                    "",
                     ""
                   )}
                 </span>
@@ -358,7 +358,7 @@ export const OpenStausFunctions = {
     return tempDate.toLocaleTimeString(localeString.replace("_", "-"), {
       hour: "numeric",
       minute: "numeric",
-      hour12: true,
+      hour12: false,
     });
   },
   getUtcOffsetFromTimeZone: (timeZone : any, date = new Date()) => {

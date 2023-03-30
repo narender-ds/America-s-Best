@@ -96,7 +96,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                 </a>
               </h2>
               {typeof result.distance != "undefined" ? (
-                <div className="distance">
+                <div className="distance text-[green]">
                   {metersToMiles(result.distance)}{" "}
                   <span>{StaticData.miles}</span>
                 </div>

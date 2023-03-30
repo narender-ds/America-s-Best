@@ -2,17 +2,20 @@ import * as React from "react";
 import Cta from "../commons/cta";
 import Hours from "../commons/hours";
 import woodtexture from "../../images/wood-texture.jpg";
-import mapimage from "../../images/map.svg";
+import mapimage from "../../images/red-map.svg";
 import Phonesvg from "../../images/phone.svg";
+import timesvg from "../../images/watch-icn.svg";
 import Address from "../commons/Address";
 import GetDirection from "../commons/GetDirection";
 import { StaticData } from "../../../sites-global/staticData";
 import Holidayhours from "./Holdayhours";
 import Model from "./Model";
 import CustomMap from "./CustomMap";
+import OpenClose from "../commons/openClose";
 
 const Contact = (props: any) => {
   const {
+    timezone,
     address,
     phone,
     latitude,
@@ -29,80 +32,111 @@ const Contact = (props: any) => {
   return (
     <>
       <div className="address-main-sec">
-        {/* <h4 className="box-title">{c_storeInfoHeading?c_storeInfoHeading:"Store Details"}</h4> */}
+        <h4 className="box-title">
+          {c_storeInfoHeading ? c_storeInfoHeading : "Store Details"}
+        </h4>
 
         <div className="icon-row content-col">
           <div className="icon">
             {" "}
-            <img className=" " src={mapimage} width="20" height="20" alt="mapimage" />
+            <img
+              className=" "
+              src={mapimage}
+              width="20"
+              height="20"
+              alt="mapimage"
+            />
           </div>
           <div className="  address-text notHighlight">
             {address.line1}
-            <div>{address.line2}</div>
-            <div>{address.city}, {address.region}, {address.postalCode}</div>
-            {/* <div>{address.postalCode}</div> */}
+            <div>{address.line2 && <div>{address.line2}</div>}</div>
+            <div>{address.city}</div>
+            <div>{address.postalCode}</div>
           </div>
         </div>
+
+        {phone ? (
+          <div className="icon-row">
+            <a id="address" className=" location-phn" href={`tel:${phone}`}>
+              <div className="icon">
+                {" "}
+                <img
+                  className=" "
+                  src={Phonesvg}
+                  width="22"
+                  height="22"
+                  alt="phonesvg"
+                />
+              </div>
+              <div className="content-col">{phone}</div>
+            </a>
+          </div>
+        ) : (
+          ""
+        )}
+        <div className="icon-row">
+          <div className="icon">
+            {" "}
+            <img
+              className=" "
+              src={timesvg}
+              width="20"
+              height="20"
+              alt=""
+            />{" "}
+          </div>
+          <div className=" address-text notHighlight mr-20">
+            <OpenClose timezone={timezone} hours={hours} />
+          </div>
+        </div>
+        <div className="flex">
         <ul className="">
-          <li className="getdirection-button-box">
+          <li className="button-bx direction-button">
             <GetDirection
-              buttonText={c_getDirectionsCTAText?c_getDirectionsCTAText:StaticData.getDirection}
+              buttonText={
+                c_getDirectionsCTAText
+                  ? c_getDirectionsCTAText
+                  : StaticData.getDirection
+              }
               address={address}
               latitude={latitude}
               longitude={longitude}
             />
           </li>
         </ul>
-
-
-        {phone ? (
-          <div className="icon-row">
-            <div className="icon">
-              {" "}
-              <img className=" " src={Phonesvg} width="22" height="22" alt="phonesvg" />
-            </div>
-            <div className="content-col">
-              <a id="address" className=" location-phn" href={`tel:${phone}`}>
-                {phone}
-              </a>
-            </div>
+        {/* <a
+            className="Hero-cta Hero-cta--eyeexam"
+            href="#"
+            data-ya-track="cta"
+          >
+            {textScheduleTest}
+          </a> */}
           </div>
-        ) : (
-          ""
-        )}
-
-       
-        <div className="map-sec">
+         <div className="map-sec">
           <CustomMap prop={yextDisplayCoordinate} />
         </div>
-        <div className="Hero-ctaWrapper Hero-ctaWrapper--eyeexam">
-                <a className="Hero-cta Hero-cta--eyeexam" href="#" data-ya-track="cta">{textScheduleTest}</a>
-                </div>
-<h4>{c_lLCTitle}</h4>
+       
       </div>
 
       {hours && typeof hours.monday != "undefined" ? (
         <div className="hours">
           <div className="hours-sec">
-            <div className="title-with-link-1">
-              <h4 className="box-title"><b>{"Hours"}</b></h4>
-            </div>
+            <h4 className="box-title">{props.title}</h4>
             <div className="hours-div mb-5 md:mb-1 flex flex-col">
-              {hours.holidayHours && typeof hours.reopenDate == "undefined" ? (
+              {hours.holidayHours && !hours.reopenDate ? (
                 <>
-                  <Model
-                    name={StaticData.Holdiay}
+                  {/* <Model
+                    name="Holiday hours"
                     holidayHours={hours.holidayHours}
                     c_specific_day={c_specific_day}
-                  />
+                  /> */}
                 </>
               ) : (
                 ""
               )}
-
               {hours && (
                 <Hours
-                  title={"Hours"}
+                  title={"Holiday hours"}
                   additionalHoursText={additionalHoursText}
                   hours={hours}
                   c_specific_day={c_specific_day}

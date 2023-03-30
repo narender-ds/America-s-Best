@@ -34,7 +34,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   document,
 }): HeadConfig => {
  return {
-   title:`${document.c_meta_title?document.c_meta_title:`America's Best optometrists Near Me - Find MGM America's Best Branch Locator Here.`}`,
+   title:`${document.c_meta_title?document.c_meta_title:`America's Best optometrists Near Me - Find America's Best America's Best Branch Locator Here.`}`,
    charset: "UTF-8",
    viewport: "width=device-width, initial-scale=1",
    tags: [
@@ -42,7 +42,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
        type: "meta",
        attributes: {
          name: "description",
-         content: `${document.c_meta_description?document.c_meta_description:`View America's Best optometrists near you today at MGM America's Best. We stock high-quality, robust products at competitive rates.`}`,
+         content: `${document.c_meta_description?document.c_meta_description:`View America's Best optometrists near you today at America's Best America's Best. We stock high-quality, robust products at competitive rates.`}`,
        },
      },
 
@@ -161,7 +161,7 @@ const Locator: Template<TemplateRenderProps>= ({
         item={{
           "@context": "https://schema.org",
           "@type": "Organization",
-          name: "MGM ",
+          name: "America's Best ",
           url: stagingBaseurl,
           logo: favicon,
         }}

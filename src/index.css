@@ -538,7 +538,7 @@ table.day-hrs .time-b{  @apply text-lg md:text-lg  w-auto leading-[1.875rem] rou
 .location-name-miles h2 a{ @apply text-[1.375rem] text-[#024b86]  font-[700]}
 
 .location-name-miles .distance{
-  @apply sm:absolute sm:-top-0.5 right-0 text-base md:text-lg mt-1 sm:mt-0
+  @apply sm:absolute sm:top-3 right-0 text-base md:text-lg mt-1 sm:mt-0
 }
 .Hero-cta--locator:hover{
   @apply bg-[#fff] text-[#a6182e] border-[#a6182e]
