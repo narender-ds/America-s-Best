@@ -905,7 +905,7 @@ a.Link.btn.notHighligh:hover{
 .locator-map-block .red-dot svg, .locator-map-block .green-dot svg{ @apply ml-1  mt-1}
 
 .city-location .button-bx{
-  @apply flex-wrap
+ gap: 30px;
 }
 .city-location .button-bx .btn{
   @apply w-full md:w-[48%]

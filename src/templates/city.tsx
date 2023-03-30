@@ -320,12 +320,12 @@ const City: Template<TemplateRenderProps> = ({
                 </div>
               </div>
               <div className="icon-row content-col availability-col flex flex-row">
-                <div className="button-bx flex flex-row">
+                <div className="button-bx flex flex-row w-72">
                   <Link className="btn" href={url} eventName={`storeDetails`}>
                     View Store
                   </Link>
                   <GetDirection
-                    buttonText="Direction"
+                    buttonText=" Get Direction"
                     address={e.address}
                     latitude={e.yextDisplayCoordinate.latitude}
                     longitude={e.yextDisplayCoordinate.longitude}

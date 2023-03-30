@@ -476,26 +476,34 @@ function UnwrappedGoogleMaps({
 
   function Infowindow(i: number, result: any): void {
     info = true;
-      let url;
+    let url;
     var name: any = result.rawData.name?.toLowerCase();
     var countryCode: any = result.rawData.address.countryCode?.toLowerCase();
     var initialcountryCode: any = countryCode.toString();
     var finalcountryCode: any = initialcountryCode.replaceAll(" ", "-");
-  var region: any = result.rawData.address.region?.toLowerCase();
-  var initialregion: any = region.toString();
-  var finalregion: any = initialregion.replaceAll(" ", "-");
-  var city: any = result.rawData.address.city?.toLowerCase();
-  var initialrcity: any = city.toString();
-  var finalcity: any = initialrcity.replaceAll(" ", "-");
-  var string1: any = name.toString();
-  let result1: any = string1.replaceAll(" ", "-");
-  let newurl=finalcountryCode+"/"+finalregion+"/"+finalcity+"/"+result1+".html"
- if (!result.rawData.slug) {
-  url= newurl;
- } else {
-  //  url= `/${result.rawData.slug.toString()}.html`;
-  url=newurl;
- }
+    var region: any = result.rawData.address.region?.toLowerCase();
+    var initialregion: any = region.toString();
+    var finalregion: any = initialregion.replaceAll(" ", "-");
+    var city: any = result.rawData.address.city?.toLowerCase();
+    var initialrcity: any = city.toString();
+    var finalcity: any = initialrcity.replaceAll(" ", "-");
+    var string1: any = name.toString();
+    let result1: any = string1.replaceAll(" ", "-");
+    let newurl =
+      finalcountryCode +
+      "/" +
+      finalregion +
+      "/" +
+      finalcity +
+      "/" +
+      result1 +
+      ".html";
+    if (!result.rawData.slug) {
+      url = newurl;
+    } else {
+      //  url= `/${result.rawData.slug.toString()}.html`;
+      url = newurl;
+    }
     const MarkerContent = (
       <>
         {" "}
@@ -513,10 +521,7 @@ function UnwrappedGoogleMaps({
               {/* <span className="map-count"></span> */}
             </div>
             <h2>
-              <a
-                className="inline-block notHighlight"
-                href={url}
-              >
+              <a className="inline-block notHighlight" href={url}>
                 {result.rawData.name}
               </a>
             </h2>
