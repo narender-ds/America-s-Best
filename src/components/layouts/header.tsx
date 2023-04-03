@@ -59,7 +59,7 @@ const Header = (props: any) => {
 
                 <div className="l-hidden-xs l-hidden-sm">
                   <div className="Header-links Header-links--main">
-                    {props._site?.c_headerMenus.headerLinks.map((item: any) =>
+                    {props._site?.c_headerMenus?.headerLinks?.map((item: any) =>
                       <div className="Header-linkWrapper Header-linkWrapper--main">
                         <a className="Header-link Header-link--main" href="#" data-ya-track="mainLink1">
                           <span className="Header-linktext">{item.label}</span>

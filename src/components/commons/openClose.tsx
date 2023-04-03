@@ -212,7 +212,7 @@ export const OpenStausFunctions = {
               to{" "}
               <span className="lowercase">
                 {OpenStausFunctions.formatTime(currentInterval.end).replace(
-                  ":00",
+                  ":",
                   ""
                 )}
               </span>{" "}

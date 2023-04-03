@@ -2,9 +2,8 @@
   "features": [
     {
       "name": "404",
-      "streamId": "404",
       "templateType": "JS",
-      "entityPageSet": {
+      "staticPage": {
         "plugin": {}
       }
     },
@@ -64,23 +63,6 @@
     }
   ],
   "streams": [
-    {
-      "$id": "404",
-      "fields": [
-        "name"
-      ],
-      "filter": {
-        "entityIds": [
-          "globaldata"
-        ]
-      },
-      "localization": {
-        "locales": [
-          "en"
-        ],
-        "primary": false
-      }
-    },
     {
       "$id": "city",
       "filter": {

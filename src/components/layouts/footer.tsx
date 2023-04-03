@@ -17,7 +17,7 @@ const Footer = (props: any) => {
                   className="SocialLinks Socials-socialLinks"
                   data-ya-scope="social"
                 >
-                  {props._site?.c_footerSocialIcons.map((icon: any) => (
+                  {props._site?.c_footerSocialIcons?.map((icon: any) => (
                     <div className="SocialLinks-linkWrapper">
                       <a
                         className="Link SocialLinks-link Link--facebook"
