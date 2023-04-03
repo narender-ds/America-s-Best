@@ -44,7 +44,6 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
 
   const { address } = result.rawData;
   // let url = "";
-  let url;
   var name: any = result.rawData.name?.toLowerCase();
   var countryCode: any = result.rawData.address.countryCode?.toLowerCase();
   var initialcountryCode: any = countryCode.toString();
