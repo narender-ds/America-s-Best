@@ -245,7 +245,7 @@ const country: Template<TemplateRenderProps> = ({
               let slugString = detl.id + " " + detl.name;
               let slug = slugString;
               // detlslug1 = `${slug}.html`;
-              detlslug1=entity.slug+"/"+res.slug+"/"+detl.name.replaceAll(" ","-").toLocaleLowerCase()+".html"
+              detlslug1=document.slug+"/"+entity.slug+"/"+res.slug+"/"+detl.name.replaceAll(" ","-").toLocaleLowerCase()+".html"
               console.log(detlslug1,"1234554")
             } else {
               // detlslug1 = `${detl.slug.toString()}.html`;
