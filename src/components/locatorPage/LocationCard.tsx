@@ -44,25 +44,34 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
 
   const { address } = result.rawData;
   // let url = "";
-  var country :any=result.rawData.address.countryCode?.toLowerCase();
-  var initialcountry: any = country.toString();
-    var finalcountry: any = initialcountry.replaceAll(" ", "-");
-    var name: any = result.rawData.name?.toLowerCase();
-    var region: any = result.rawData.address.region?.toLowerCase();
-    var initialregion: any = region.toString();
-    var finalregion: any = initialregion.replaceAll(" ", "-");
-    var city: any = result.rawData.address.city?.toLowerCase();
-    var initialrcity: any = city.toString();
-    var finalcity: any = initialrcity.replaceAll(" ", "-");
-    var string: any = name.toString();
-    let result1: any = string.replaceAll(" ", "-");
-    var links:any=finalcountry+"/"+finalregion+"/"+ finalcity+"/"+ result.rawData.id;
-    if (!result.rawData.slug) {
-      url = `${links}.html`;
-    } else {
-      url = `${links}.html`;
-    }
-    
+  let url;
+  var name: any = result.rawData.name?.toLowerCase();
+  var countryCode: any = result.rawData.address.countryCode?.toLowerCase();
+  var initialcountryCode: any = countryCode.toString();
+  var finalcountryCode: any = initialcountryCode.replaceAll(" ", "-");
+  var region: any = result.rawData.address.region?.toLowerCase();
+  var initialregion: any = region.toString();
+  var finalregion: any = initialregion.replaceAll(" ", "-");
+  var city: any = result.rawData.address.city?.toLowerCase();
+  var initialrcity: any = city.toString();
+  var finalcity: any = initialrcity.replaceAll(" ", "-");
+  var string: any = name.toString();
+  let result1: any = string.replaceAll(" ", "-");
+  let newurl =
+    finalcountryCode +
+    "/" +
+    finalregion +
+    "/" +
+    finalcity +
+    "/" +
+    result1 +
+    ".html";
+  if (!result.rawData.slug) {
+    url = newurl;
+  } else {
+    //  url= `/${result.rawData.slug.toString()}.html`;
+    url = newurl;
+  }
   return (
     <div
       className={`location result-list-inner-${result.id} result`}
