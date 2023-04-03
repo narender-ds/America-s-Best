@@ -208,8 +208,8 @@ export const OpenStausFunctions = {
                   ":00",
                   ""
                 )}
-              </span>{" "}
-              to{" "}
+              </span>{" "}{" "}
+              to{" "}{" "}
               <span className="lowercase">
                 {OpenStausFunctions.formatTime(currentInterval.end).replace(
                   ":",

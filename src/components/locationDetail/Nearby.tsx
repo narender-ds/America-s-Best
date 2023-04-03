@@ -3,6 +3,7 @@ import ApiCall from "../../Apis/ApiCall";
 import Address from "../commons/Address";
 import GetDirection from "../commons/GetDirection";
 import OpenClose from "../commons/openClose";
+import Phonesvg from "../../images/phone.svg";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { Link } from "@yext/pages/components";
 
@@ -65,7 +66,7 @@ export default function Nearby(props: any) {
         if (!location.data.slug) {
           url = `/${newurl}`;
         } else {
-          //  url= `/${result.rawData.slug.toString()}.html`;
+          //  url= `/${location.data.slug.toString()}.html`;
           url = newurl;
         }
         if (index > 0) {
@@ -98,8 +99,33 @@ export default function Nearby(props: any) {
                 <div className="icon-row content-col">
                   <Address address={location.data.address} />
                 </div>
+                {location.data.mainPhone ? (
+              <div className="icon-row">
+                <h6>Telephone</h6>
+                <Link
+                  id="address"
+                  className=" location-phn"
+                  href={`tel:${location.data.mainPhone}`}
+                >
+                  {/* <div className="icon">
+                    {" "}
+                    <img
+                      className=" "
+                      src={Phonesvg}
+                      width="22"
+                      height="22"
+                      alt="phonesvg"
+                    />
+                  </div> */}
+                  <div className="content-col">{location.data.mainPhone}</div>
+                </Link>
+              </div>
+            ) : (
+              ""
+            )}
 
                 <div className="icon-row closeing-div">
+                <h6>Opening Hours</h6>
                   {location.data.hours ? (
                     <div
                       className="flex open-now-string items-center "
@@ -134,6 +160,7 @@ export default function Nearby(props: any) {
                     </div>
                   )}
                 </div>
+                
                 <div className="button-bx">
                   <Link
                     className="btn"
