@@ -16,12 +16,14 @@ import BreadCrumbs from "../components/layouts/Breadcrumb";
 import Banner1 from "../components/locationDetail/Banner1";
 import { StaticData } from "../../sites-global/staticData";
 import PageLayout from "../components/layouts/PageLayout";
-import { favicon, regionNames, stagingBaseurl } from "../../sites-global/global";
+import {
+  favicon,
+  regionNames,
+  stagingBaseurl,
+} from "../../sites-global/global";
 import Footer1 from "../components/layouts/NewFooter";
 import Header1 from "../components/layouts/NewHeader";
 import PhotoSlider from "../components/locationDetail/PhotoSlider";
-
-
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -53,14 +55,12 @@ export const config: TemplateConfig = {
       // "dm_directoryChildren.dm_baseEntityCount",
       "dm_directoryChildren.dm_directoryChildren.slug",
       "dm_directoryChildren.dm_directoryChildren.dm_directoryChildren.name",
-      "dm_directoryChildren.dm_directoryChildren.dm_directoryChildren.slug"
+      "dm_directoryChildren.dm_directoryChildren.dm_directoryChildren.slug",
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
       entityTypes: ["ce_country"],
-      savedFilterIds: [
-        "dm_stores-directory_address_countrycode"
-      ]
+      savedFilterIds: ["dm_stores-directory_address_countrycode"],
     },
     // The entity language profiles that documents will be generated for.
     localization: {
@@ -69,7 +69,6 @@ export const config: TemplateConfig = {
     },
   },
 };
-
 
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
   currentUrl = "/" + document.slug.toString() + ".html";
@@ -80,15 +79,17 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
 //   return [`index-old/${document.id.toString()}`];
 // };
 
-
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   relativePrefixToRoot,
   path,
   document,
 }): HeadConfig => {
-
   return {
-    title: `${document.c_meta_title ? document.c_meta_title : `${document.name} | Find a Local Store`}`,
+    title: `${
+      document.c_meta_title
+        ? document.c_meta_title
+        : `${document.name} | Find a Local Store`
+    }`,
     charset: "UTF-8",
     viewport: "width=device-width, initial-scale=1",
     tags: [
@@ -103,7 +104,11 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         type: "meta",
         attributes: {
           name: "description",
-          content: `${document.c_meta_description ? document.c_meta_description : `Use this page to find your nearest ${document.name} and discover the location details you need to visit us today.`}`,
+          content: `${
+            document.c_meta_description
+              ? document.c_meta_description
+              : `Use this page to find your nearest ${document.name} and discover the location details you need to visit us today.`
+          }`,
         },
       },
 
@@ -134,7 +139,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
       //   attributes: {
       //     rel: "canonical",
       //     href: `${
-      //       stagingBaseurl 
+      //       stagingBaseurl
       //          ? stagingBaseurl + document.slug + ".html"
       //          : "/" + document.slug + ".html"
       //     }`,
@@ -146,14 +151,20 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         type: "meta",
         attributes: {
           property: "og:url",
-          content: `/${document.slug ? document.slug : `${document.name.toLowerCase()}`}.html`,
+          content: `/${
+            document.slug ? document.slug : `${document.name.toLowerCase()}`
+          }.html`,
         },
       },
       {
         type: "meta",
         attributes: {
           property: "og:description",
-          content: `${document.c_meta_description ? document.c_meta_description : `Find ${document.name}. We stock high-quality, robust products at competitive rates.`}`,
+          content: `${
+            document.c_meta_description
+              ? document.c_meta_description
+              : `Find ${document.name}. We stock high-quality, robust products at competitive rates.`
+          }`,
         },
       },
       {
@@ -182,7 +193,9 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         type: "meta",
         attributes: {
           name: "twitter:url",
-          content: `/${document.slug ? document.slug : `${document.name.toLowerCase()}`}.html`,
+          content: `/${
+            document.slug ? document.slug : `${document.name.toLowerCase()}`
+          }.html`,
         },
       },
 
@@ -190,14 +203,16 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         type: "meta",
         attributes: {
           name: "twitter:description",
-          content: `${document.c_meta_description ? document.c_meta_description : `Find America's Best Optimist in ${document.name}. We stock high-quality, robust products at competitive rates.`}`
+          content: `${
+            document.c_meta_description
+              ? document.c_meta_description
+              : `Find America's Best Optimist in ${document.name}. We stock high-quality, robust products at competitive rates.`
+          }`,
         },
       },
     ],
   };
 };
-
-
 
 const country: Template<TemplateRenderProps> = ({
   relativePrefixToRoot,
@@ -212,107 +227,116 @@ const country: Template<TemplateRenderProps> = ({
     c_locatorBannerImage,
     c_locatorBannerTitle,
     dm_directoryParents,
-    dm_directoryChildren
+    dm_directoryChildren,
   } = document;
   // console.log(document.slug,"1");
   // console.log(dm_directoryChildren,"2")
   // console.log(dm_directoryChildren.dm_directoryChildren,"63")
   // console.log(dm_directoryChildren,"3")
-  const childrenDivs = dm_directoryChildren ? dm_directoryChildren.map((entity: any) => {
-    let detlslug;
+  const childrenDivs = dm_directoryChildren
+    ? dm_directoryChildren.map((entity: any) => {
+        let detlslug;
 
+        if (typeof entity.dm_directoryChildren != "undefined") {
+          if (entity.dm_baseEntityCount == 1) {
+            entity.dm_directoryChildren?.map((res: any) => {
+              // console.log(res,"jhgsvhfvbfb")
+              let detlslug1 = "";
 
-    if (typeof entity.dm_directoryChildren != "undefined") {
-      if (entity.dm_baseEntityCount == 1) {
-        entity.dm_directoryChildren.map((res: any) => {
-          // console.log(res,"jhgsvhfvbfb")
-          let detlslug1 = "";
+              if (!res.slug) {
+                let slugString = res.id + " " + res.name;
+                let slug = slugString;
+                detlslug1 = `${slug}.html`;
+              } else {
+                detlslug1 = `${res.slug.toString()}.html`;
+              }
+              // console.log(detlslug1,"detlslug1")
 
-          if (!res.slug) {
-            let slugString = res.id + " " + res.name;
-            let slug = slugString;
-            detlslug1 = `${slug}.html`;
+              res.dm_directoryChildren
+                ? res.dm_directoryChildren.map((detl: any) => {
+                    if (!detl.slug) {
+                      let slugString = detl.id + " " + detl.name;
+                      let slug = slugString;
+                      // detlslug1 = `${slug}.html`;
+                      detlslug1 =
+                        document.slug +
+                        "/" +
+                        entity.slug +
+                        "/" +
+                        res.slug +
+                        "/" +
+                        detl.name.replaceAll(" ", "-").toLocaleLowerCase() +
+                        ".html";
+                      // console.log(detlslug1,"1234554")
+                    } else {
+                      // detlslug1 = `${detl.slug.toString()}.html`;
+                      // detlslug1=slug+"/"+entity.slug+"/"+res.slug+"/"+detl.slug.toString()+".html"
+                      detlslug1 =
+                        slug +
+                        "/" +
+                        detlslug1 +
+                        "/" +
+                        detl.slug.toString() +
+                        ".html";
+
+                      //  console.log(detlslug1,"1234554")
+                    }
+
+                    detlslug = detlslug1;
+                  })
+                : (detlslug = detlslug1);
+            });
           } else {
-            detlslug1 = `${res.slug.toString()}.html`;
+            detlslug = slug + "/" + entity.slug + ".html";
+
+            // console.log(detlslug,"dghgdjg567124125hjgd")
           }
-          // console.log(detlslug1,"detlslug1")
-          
+        }
 
+        return (
+          <li className=" storelocation-category">
+            <a key={entity.slug} href={detlslug}>
+              {entity.name} ({entity.dm_baseEntityCount})
+            </a>
+          </li>
+        );
+      })
+    : null;
 
-          res.dm_directoryChildren ? res.dm_directoryChildren.map((detl: any) => {
-
-            if (!detl.slug) {
-              let slugString = detl.id + " " + detl.name;
-              let slug = slugString;
-              // detlslug1 = `${slug}.html`;
-              detlslug1=document.slug+"/"+entity.slug+"/"+res.slug+"/"+detl.name.replaceAll(" ","-").toLocaleLowerCase()+".html"
-              console.log(detlslug1,"1234554")
-            } else {
-              // detlslug1 = `${detl.slug.toString()}.html`;
-              // detlslug1=slug+"/"+entity.slug+"/"+res.slug+"/"+detl.slug.toString()+".html"
-              detlslug1=slug+"/"+detlslug1+"/"+detl.slug.toString()+".html"
-
-             console.log(detlslug1,"1234554")
-            }
-
-            detlslug = detlslug1;
-
-          }) : detlslug = detlslug1;
-
-
-        });
-      }
-      else {
-        detlslug = slug + "/" + entity.slug + ".html";
-    
-        // console.log(detlslug,"dghgdjg567124125hjgd")
-      }
-    }
-
-    
-
-    return (
-      <li className=" storelocation-category">
-        <a
-          key={entity.slug}
-          href={detlslug}
-        >
-          {entity.name} ({entity.dm_baseEntityCount})
-        </a>
-      </li>
-    )
-  }) : null;
-
-
-  let bannerimage = c_locatorBannerImage ? c_locatorBannerImage.map((element: any) => {
-    return element.url
-  }) : null;
+  let bannerimage = c_locatorBannerImage
+    ? c_locatorBannerImage.map((element: any) => {
+        return element.url;
+      })
+    : null;
 
   return (
     <>
       {/* <Header1 _site={_site} /> */}
-      <PageLayout _site={_site} >
-      <BreadCrumbs
-        name={regionNames.of(name)}
-        address={address}
-        parents={dm_directoryParents}
-        baseUrl={relativePrefixToRoot}
-      ></BreadCrumbs>
+      <PageLayout _site={_site}>
+        <BreadCrumbs
+          name={regionNames.of(name)}
+          address={address}
+          parents={dm_directoryParents}
+          baseUrl={relativePrefixToRoot}
+        ></BreadCrumbs>
 
-      <div className="content-list">
-        <div className="container">
-          <div className="sec-title">
-            <h2 style={{ textAlign: "center" }}>
-              {StaticData.AllRegion} {regionNames.of(name)}{" "}
-            </h2>
+        <div className="content-list">
+          <div className="container">
+            <div className="sec-title">
+              <h2 style={{ textAlign: "center" }}>
+                {StaticData.AllRegion} {regionNames.of(name)}{" "}
+              </h2>
+            </div>
+
+            <ul
+              className="region-list"
+              style={{ alignContent: "center", justifyContent: "center" }}
+            >
+              {childrenDivs}
+            </ul>
           </div>
-
-          <ul className="region-list" style={{ alignContent: "center", justifyContent: "center" }}>
-            {childrenDivs}
-          </ul>
         </div>
-      </div>
-      {/* <Footer1 _site={_site} /> */}
+        {/* <Footer1 _site={_site} /> */}
       </PageLayout>
     </>
   );

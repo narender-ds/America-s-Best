@@ -229,7 +229,7 @@ const region: Template<TemplateRenderProps> = ({
       if (entity?.dm_baseEntityCount == 1) {
         newurl = entity.slug;
         let result1: any = newurl.replaceAll(" ", "-");
-        
+
         entity.dm_directoryChildren.map((detl: any) => {
           var string: any = detl.name.toString();
           let result: any = string.replaceAll(" ", "-");
@@ -238,7 +238,7 @@ const region: Template<TemplateRenderProps> = ({
         // console.log('newurl', newurl)
         // let slugs =
         //   links+"/" + entity?.dm_directoryChildren[0]?.name.toLowerCase() + ".html";
-        // let slug: any = slugs.replaceAll(" ", "-"); 
+        // let slug: any = slugs.replaceAll(" ", "-");
         return (
           <div className="w-1/2 storelocation-category md:w-1/3 lg:w-1/4 px-4">
             <a key={entity.slug} href={newurl} className="hover:text-red">
@@ -277,7 +277,7 @@ const region: Template<TemplateRenderProps> = ({
   let bannerimage = c_banner_image && c_banner_image.image.url;
   return (
     <>
-      <PageLayout _site={_site} >
+      <PageLayout _site={_site}>
         <BreadCrumbs
           name={name}
           parents={dm_directoryParents}

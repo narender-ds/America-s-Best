@@ -12,6 +12,7 @@ import Holidayhours from "./Holdayhours";
 import Model from "./Model";
 import CustomMap from "./CustomMap";
 import OpenClose from "../commons/openClose";
+import { Link } from "@yext/pages/components";
 
 const Contact = (props: any) => {
   const {
@@ -57,7 +58,7 @@ const Contact = (props: any) => {
 
         {phone ? (
           <div className="icon-row">
-            <a id="address" className=" location-phn" href={`tel:${phone}`}>
+            <Link id="address" className=" location-phn" href={`tel:${phone}`}>
               <div className="icon">
                 {" "}
                 <img
@@ -69,7 +70,7 @@ const Contact = (props: any) => {
                 />
               </div>
               <div className="content-col">{phone}</div>
-            </a>
+            </Link>
           </div>
         ) : (
           ""

@@ -18,7 +18,7 @@ export default function StoreHighlight(props: any) {
 
                 {
                     props.c_storeHighlightInfo.map((res: any, i: Number) => {
-                        console.log(res, "storehighlight")
+                        // console.log(res, "storehighlight")
 
                         return (
                             <>
@@ -29,7 +29,7 @@ export default function StoreHighlight(props: any) {
                                         <div className="service-img">
                                             {res.image ?
                                                 
-                                                    <img src={res.image.image.url} className="w-full" height="250" />
+                                                    <img src={res.image.image.url} className="w-full" height="250" alt=""/>
                                                 
                                              : <img className="w-full" src="http://a.mktgcdn.com/p-sandbox/PTjCS8rBXb9HTapnby2IEwQooHVJYvQqu7fhve2Gheo/1000x667.jpg" height="250" alt="" />
                                             }

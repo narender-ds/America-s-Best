@@ -78,6 +78,7 @@
         "uid",
         "meta",
         "name",
+        "dm_directoryChildren.timezone",
         "slug",
         "dm_directoryParents.name",
         "dm_directoryParents.slug",

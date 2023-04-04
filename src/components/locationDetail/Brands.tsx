@@ -19,7 +19,7 @@ const Brands = (props: any) => {
                               
                                
                                 <a className="Brand-imageWrapper" href="#" data-ya-track="link#">
-                                    <img className="Brand-image js-lazy-loaded" src={item.url}/>
+                                    <img className="Brand-image js-lazy-loaded" src={item.url} alt=""/>
                                 </a>
                                 
                             </div>

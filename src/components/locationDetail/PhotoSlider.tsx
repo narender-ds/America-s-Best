@@ -7,7 +7,7 @@ const PhotoSlider = (props: any) => {
   const photos = photoGallery.map((element:any) => (   
 
 	<SplideSlide>
-    <img height={height} width={width} src={element.url} />
+    <img height={height} width={width} src={element.url} alt="" />
 	</SplideSlide>    
   ));
   return (

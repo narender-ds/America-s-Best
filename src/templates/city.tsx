@@ -49,6 +49,7 @@ export const config: TemplateConfig = {
       "uid",
       "meta",
       "name",
+      "dm_directoryChildren.timezone",
       "slug",
       "dm_directoryParents.name",
       "dm_directoryParents.slug",
@@ -115,7 +116,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: `${
             document.c_meta_description
               ? document.c_meta_description
-              : "Pacific Smile Dental provide a unique approach to ."
+              : "America's Best provide a unique approach to ."
           }`,
         },
       },
@@ -130,7 +131,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         type: "meta",
         attributes: {
           name: "author",
-          content: "Pacific Smile Dental:Dental store",
+          content: "America's Best:Optical store",
         },
       },
 
@@ -165,7 +166,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: `${
             document.c_meta_description
               ? document.c_meta_description
-              : "Pacific Smile Dental provide a unique approach "
+              : "America's Best provide a unique approach "
           }`,
         },
       },
@@ -199,7 +200,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: `${
             document.c_meta_description
               ? document.c_meta_description
-              : "Pacific Smile Dental provide a unique approach to."
+              : "America's Best provide a unique approach to."
           }`,
         },
       },
@@ -382,7 +383,7 @@ const City: Template<TemplateRenderProps> = ({
         item={{
           "@context": "https://schema.org",
           "@type": "MedicareServices",
-          name: "Pacific Smile Dental",
+          name: "America's Best Optimist",
           //   url: _site.c_canonical,
           // logo: `${document.c_ogImage ? document.c_ogImage.map((result:any)=>{return result.url}) : ""}`
         }}
