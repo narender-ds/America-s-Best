@@ -42,14 +42,14 @@ export default function Nearby(props: any) {
       > */}
       {neabyData.map((location: any, index: Number) => {
         let url = "";
-              var name: any =location.data.name?.toLowerCase();
-        var countryCode: any =location.data.address.countryCode?.toLowerCase();
+        var name: any = location.data.name?.toLowerCase();
+        var countryCode: any = location.data.address.countryCode?.toLowerCase();
         var initialcountryCode: any = countryCode.toString();
         var finalcountryCode: any = initialcountryCode.replaceAll(" ", "-");
-        var region: any =location.data.address.region?.toLowerCase();
+        var region: any = location.data.address.region?.toLowerCase();
         var initialregion: any = region.toString();
         var finalregion: any = initialregion.replaceAll(" ", "-");
-        var city: any =location.data.address.city?.toLowerCase();
+        var city: any = location.data.address.city?.toLowerCase();
         var initialrcity: any = city.toString();
         var finalcity: any = initialrcity.replaceAll(" ", "-");
         var string: any = name.toString();
@@ -100,14 +100,14 @@ export default function Nearby(props: any) {
                   <Address address={location.data.address} />
                 </div>
                 {location.data.mainPhone ? (
-              <div className="icon-row">
-                <h6>Telephone</h6>
-                <Link
-                  id="address"
-                  className=" location-phn"
-                  href={`tel:${location.data.mainPhone}`}
-                >
-                  {/* <div className="icon">
+                  <div className="icon-row">
+                    <h6>Telephone</h6>
+                    <Link
+                      id="address"
+                      className=" location-phn"
+                      href={`tel:${location.data.mainPhone}`}
+                    >
+                      {/* <div className="icon">
                     {" "}
                     <img
                       className=" "
@@ -117,15 +117,17 @@ export default function Nearby(props: any) {
                       alt="phonesvg"
                     />
                   </div> */}
-                  <div className="content-col">{location.data.mainPhone}</div>
-                </Link>
-              </div>
-            ) : (
-              ""
-            )}
+                      <div className="content-col">
+                        {location.data.mainPhone}
+                      </div>
+                    </Link>
+                  </div>
+                ) : (
+                  ""
+                )}
 
                 <div className="icon-row closeing-div">
-                <h6>Opening Hours</h6>
+                  <h6>Opening Hours</h6>
                   {location.data.hours ? (
                     <div
                       className="flex open-now-string items-center "
@@ -160,7 +162,7 @@ export default function Nearby(props: any) {
                     </div>
                   )}
                 </div>
-                
+
                 <div className="button-bx">
                   <Link
                     className="btn"

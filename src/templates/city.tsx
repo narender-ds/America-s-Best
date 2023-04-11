@@ -287,11 +287,10 @@ const City: Template<TemplateRenderProps> = ({
                 <Address address={e.address} />
               </div>
               <div className="icon-row">
-                              <div className="icon">
+                <div className="icon">
                   <img src={Phonesvg} alt="" width="20" height="20" />
                 </div>
                 <Link href={`tel:${e.mainPhone}`}>{e.mainPhone}</Link>
-          
               </div>
               <div className="icon-row">
                 <div className="icon"></div>
@@ -396,8 +395,7 @@ const City: Template<TemplateRenderProps> = ({
           itemListElement: breadcrumbScheme,
         }}
       />
-      <PageLayout _site={_site} >
-  
+      <PageLayout _site={_site}>
         <BreadCrumbs
           name={name}
           address={address}
@@ -408,10 +406,7 @@ const City: Template<TemplateRenderProps> = ({
         <div className="content-list city-page">
           <div className="container mx-auto">
             <div className="sec-title">
-              <h2>
-                Available Dental Store in {name}
-              
-              </h2>
+              <h2>Available Dental Store in {name}</h2>
             </div>
             <div className="flex flex-wrap justify-center items-start -mx-2.5 lg:-mx-[.9375rem]">
               {allCities}

@@ -29,17 +29,13 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = () => {
           href: favicon,
         },
       },
-    ]
+    ],
   };
 };
 
 // Template that will show as the page
-const FourOhFour: Template<TemplateRenderProps> = ({
-  document,
-}) => {
-  const {
-    _site
-  } = document;
+const FourOhFour: Template<TemplateRenderProps> = ({ document }) => {
+  const { _site } = document;
   return (
     <>
       <PageLayout _site={_site}>
@@ -52,12 +48,14 @@ const FourOhFour: Template<TemplateRenderProps> = ({
               <p>{StaticData.cantfind_page}.</p>
               <p>{StaticData.Youcouldtry}</p>
               <div className="button-bx max-w-[45rem] !mx-auto !mt-5">
-                <a className="btn" href="javascript:history.back()">{StaticData.Previuspage} &gt;</a>
-                <a className="btn" href="/">{StaticData.homePage} &gt;</a>
+                <a className="btn" href="javascript:history.back()">
+                  {StaticData.Previuspage} &gt;
+                </a>
+                <a className="btn" href="/">
+                  {StaticData.homePage} &gt;
+                </a>
               </div>
             </div>
-
-
           </div>
         </div>
       </PageLayout>

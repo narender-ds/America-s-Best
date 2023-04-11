@@ -229,7 +229,6 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                   Closed
                 </div>
               </div>
-              
             )}
 
             {/* <div className="flex flex-wrap gap-y-4 mt-2">

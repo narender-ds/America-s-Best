@@ -28,7 +28,7 @@ const Contact = (props: any) => {
     c_storeInfoHeading,
     c_getDirectionsCTAText,
     textScheduleTest,
-    c_lLCTitle
+    c_lLCTitle,
   } = props;
   return (
     <>
@@ -91,32 +91,31 @@ const Contact = (props: any) => {
           </div>
         </div>
         <div className="flex">
-        <ul className="">
-          <li className="button-bx direction-button">
-            <GetDirection
-              buttonText={
-                c_getDirectionsCTAText
-                  ? c_getDirectionsCTAText
-                  : StaticData.getDirection
-              }
-              address={address}
-              latitude={latitude}
-              longitude={longitude}
-            />
-          </li>
-        </ul>
-        {/* <a
+          <ul className="">
+            <li className="button-bx direction-button">
+              <GetDirection
+                buttonText={
+                  c_getDirectionsCTAText
+                    ? c_getDirectionsCTAText
+                    : StaticData.getDirection
+                }
+                address={address}
+                latitude={latitude}
+                longitude={longitude}
+              />
+            </li>
+          </ul>
+          {/* <a
             className="Hero-cta Hero-cta--eyeexam"
             href="#"
             data-ya-track="cta"
           >
             {textScheduleTest}
           </a> */}
-          </div>
-         <div className="map-sec">
+        </div>
+        <div className="map-sec">
           <CustomMap prop={yextDisplayCoordinate} />
         </div>
-       
       </div>
 
       {hours && typeof hours.monday != "undefined" ? (

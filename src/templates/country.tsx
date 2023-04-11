@@ -311,7 +311,6 @@ const country: Template<TemplateRenderProps> = ({
 
   return (
     <>
-      {/* <Header1 _site={_site} /> */}
       <PageLayout _site={_site}>
         <BreadCrumbs
           name={regionNames.of(name)}
@@ -336,7 +335,6 @@ const country: Template<TemplateRenderProps> = ({
             </ul>
           </div>
         </div>
-        {/* <Footer1 _site={_site} /> */}
       </PageLayout>
     </>
   );

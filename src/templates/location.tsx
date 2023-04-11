@@ -1,15 +1,10 @@
 import * as React from "react";
-import Banner from "../components/locationDetail/banner";
-import Cta from "../components/commons/cta";
 import Contact from "../components/locationDetail/contact";
 import ApiCall from "../Apis/ApiCall";
 import Nearby from "../components/locationDetail/Nearby";
 import { CustomFieldDebuggerReactProvider } from "@yext/custom-field-debugger";
 import { JsonLd } from "react-schemaorg";
-import Opening from "../components/commons/openClose";
 import { nearByLocation } from "../types/nearByLocation";
-import Logo from "../images/logo-header.svg";
-import offerBanner from "../images/offer-banner.jpg";
 import IframeMap from "../components/locationDetail/IframeMap";
 import "../index.css";
 import {
@@ -25,18 +20,10 @@ import {
 } from "@yext/pages";
 import PageLayout from "../components/layouts/PageLayout";
 import { fetch } from "@yext/pages/util";
-import Nav from "../components/layouts/Nav";
-import Footer from "../components/layouts/footer";
-import Menu from "../components/locationDetail/Menu";
-import PhotoSlider from "../components/locationDetail/PhotoSlider";
 import PhotoGallery from "../components/locationDetail/PhotoGallery";
 import About from "../components/locationDetail/About";
-import Breadcrumb from "../components/layouts/Breadcrumb";
 import CustomMap from "../components/locationDetail/CustomMap";
 import BreadCrumbs from "../components/layouts/Breadcrumb";
-import StoreHighlight from "../components/locationDetail/SoreHighlight";
-import OpenClose from "../components/commons/openClose";
-import Faq from "../components/locationDetail/Faqs";
 import { StaticData } from "../../sites-global/staticData";
 
 import {
@@ -405,7 +392,6 @@ const Location: Template<ExternalApiRenderData> = ({
             j.meta.entityType.id != "ce_city" &&
             j.meta.entityType.id != "ce_root"
           ) {
-          
             url = url + j.slug;
           }
         });
@@ -429,7 +415,6 @@ const Location: Template<ExternalApiRenderData> = ({
             j.meta.entityType.id != "ce_city" &&
             j.meta.entityType.id != "ce_root"
           ) {
-            
             url = url + "/" + j.slug;
           }
         });
@@ -504,6 +489,7 @@ const Location: Template<ExternalApiRenderData> = ({
         {" "}
         <AnalyticsScopeProvider name={""}>
           <PageLayout _site={_site}>
+            {console.log('_site', _site)}
             <div className="hero-banner">
               <div className="hero-image hero-image2">
                 <img

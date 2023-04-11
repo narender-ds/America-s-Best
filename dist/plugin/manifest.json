@@ -1,13 +1,13 @@
 {
   "bundlePaths": {
-    "404": "assets/server/404.11eb1ad9.js",
-    "city": "assets/server/city.3f57e3c2.js",
-    "country": "assets/server/country.093d9dd1.js",
-    "location": "assets/server/location.f60ae60f.js",
-    "locator": "assets/server/locator.8bea43ed.js",
+    "404": "assets/server/404.f1f46908.js",
+    "city": "assets/server/city.bdf9c9ba.js",
+    "country": "assets/server/country.ea70d9f8.js",
+    "location": "assets/server/location.d7d35277.js",
+    "locator": "assets/server/locator.891e9a4f.js",
     "robots": "assets/server/robots.eedb751a.js",
-    "root": "assets/server/root.f43491cf.js",
-    "state": "assets/server/state.5df0a7fd.js"
+    "root": "assets/server/root.9178129d.js",
+    "state": "assets/server/state.d6594cf5.js"
   },
   "projectFilepaths": {
     "templatesRoot": "src/templates",
@@ -22,17 +22,17 @@
       "isEntry": true,
       "imports": [
         "_preload-helper-094304c8.js",
-        "_index-07a422aa.js",
-        "_server.browser-1e987e39.js"
+        "_index-f1b7cb60.js",
+        "_server.browser-749961df.js"
       ]
-    },
-    "src/images/watch-icn.svg": {
-      "file": "assets/static/watch-icn-343fe80e.svg",
-      "src": "src/images/watch-icn.svg"
     },
     "src/images/phone.svg": {
       "file": "assets/static/phone-4df45c02.svg",
       "src": "src/images/phone.svg"
+    },
+    "src/images/watch-icn.svg": {
+      "file": "assets/static/watch-icn-343fe80e.svg",
+      "src": "src/images/watch-icn.svg"
     },
     "src/images/map.svg": {
       "file": "assets/static/map-4e8d117e.svg",
@@ -41,6 +41,10 @@
     "src/images/red-map.svg": {
       "file": "assets/static/red-map-358c08d3.svg",
       "src": "src/images/red-map.svg"
+    },
+    "src/images/MGMpin.svg": {
+      "file": "assets/static/MGMpin-aad9d43b.svg",
+      "src": "src/images/MGMpin.svg"
     },
     "src/images/mapdesign.svg": {
       "file": "assets/static/mapdesign-f8c1bb0c.svg",
@@ -58,10 +62,6 @@
       "file": "assets/static/dots-c532748f.svg",
       "src": "src/images/dots.svg"
     },
-    "src/images/shape-b.svg": {
-      "file": "assets/static/shape-b-bdecdd2a.svg",
-      "src": "src/images/shape-b.svg"
-    },
     "src/images/plus-sym.svg": {
       "file": "assets/static/plus-sym-e2bf518e.svg",
       "src": "src/images/plus-sym.svg"
@@ -74,170 +74,170 @@
       "file": "assets/static/shape-t-4e865b2a.svg",
       "src": "src/images/shape-t.svg"
     },
-    "src/images/MGMpin.svg": {
-      "file": "assets/static/MGMpin-aad9d43b.svg",
-      "src": "src/images/MGMpin.svg"
+    "src/images/shape-b.svg": {
+      "file": "assets/static/shape-b-bdecdd2a.svg",
+      "src": "src/images/shape-b.svg"
     },
     "src/images/newsletter-bg.png": {
       "file": "assets/static/newsletter-bg-6b390772.png",
       "src": "src/images/newsletter-bg.png"
     },
     "dist/hydration_templates/404.tsx": {
-      "file": "assets/hydrate/404.bc4063d1.js",
+      "file": "assets/hydrate/404.e2a41d0c.js",
       "src": "dist/hydration_templates/404.tsx",
       "isEntry": true,
       "imports": [
-        "_index-fadde1ce.js",
+        "_index-04cd2aa4.js",
         "src/templates/404.tsx",
-        "_header-705bcaf7.js",
-        "_index-07a422aa.js",
+        "_header-64ea35cc.js",
+        "_index-f1b7cb60.js",
         "_global-790ced0b.js",
-        "_PageLayout-d9efef0d.js"
+        "_PageLayout-f1c6abf7.js"
       ]
     },
     "src/templates/404.tsx": {
-      "file": "assets/server/404.11eb1ad9.js",
+      "file": "assets/server/404.f1f46908.js",
       "src": "src/templates/404.tsx",
       "isEntry": true,
       "imports": [
         "_global-790ced0b.js",
-        "_PageLayout-d9efef0d.js",
-        "_header-705bcaf7.js",
-        "_index-07a422aa.js"
+        "_PageLayout-f1c6abf7.js",
+        "_header-64ea35cc.js",
+        "_index-f1b7cb60.js"
       ]
     },
     "dist/hydration_templates/city.tsx": {
-      "file": "assets/hydrate/city.9da93789.js",
+      "file": "assets/hydrate/city.f0102fe3.js",
       "src": "dist/hydration_templates/city.tsx",
       "isEntry": true,
       "imports": [
-        "_index-fadde1ce.js",
+        "_index-04cd2aa4.js",
         "src/templates/city.tsx",
-        "_header-705bcaf7.js",
-        "_index-07a422aa.js",
-        "_openClose-4268d798.js",
-        "_index-de0714d2.js",
+        "_header-64ea35cc.js",
+        "_index-f1b7cb60.js",
+        "_openClose-6c2e1672.js",
+        "_index-35061f12.js",
         "_global-790ced0b.js",
-        "_PageLayout-d9efef0d.js",
-        "_Breadcrumb-9d3cde28.js"
+        "_PageLayout-f1c6abf7.js",
+        "_Breadcrumb-1eab4228.js"
       ]
     },
     "src/templates/city.tsx": {
-      "file": "assets/server/city.3f57e3c2.js",
+      "file": "assets/server/city.bdf9c9ba.js",
       "src": "src/templates/city.tsx",
       "isEntry": true,
       "imports": [
-        "_openClose-4268d798.js",
+        "_openClose-6c2e1672.js",
         "_global-790ced0b.js",
-        "_index-de0714d2.js",
-        "_Breadcrumb-9d3cde28.js",
-        "_PageLayout-d9efef0d.js",
-        "_index-07a422aa.js",
-        "_header-705bcaf7.js"
+        "_index-35061f12.js",
+        "_Breadcrumb-1eab4228.js",
+        "_PageLayout-f1c6abf7.js",
+        "_index-f1b7cb60.js",
+        "_header-64ea35cc.js"
       ],
       "assets": [
         "assets/static/map-4e8d117e.svg"
       ]
     },
     "dist/hydration_templates/country.tsx": {
-      "file": "assets/hydrate/country.1b591321.js",
+      "file": "assets/hydrate/country.40190b4f.js",
       "src": "dist/hydration_templates/country.tsx",
       "isEntry": true,
       "imports": [
-        "_index-fadde1ce.js",
+        "_index-04cd2aa4.js",
         "src/templates/country.tsx",
-        "_header-705bcaf7.js",
-        "_index-07a422aa.js",
-        "_index-de0714d2.js",
-        "_Breadcrumb-9d3cde28.js",
+        "_header-64ea35cc.js",
+        "_index-f1b7cb60.js",
+        "_index-35061f12.js",
+        "_Breadcrumb-1eab4228.js",
         "_global-790ced0b.js",
-        "_PageLayout-d9efef0d.js"
+        "_PageLayout-f1c6abf7.js"
       ]
     },
     "src/templates/country.tsx": {
-      "file": "assets/server/country.093d9dd1.js",
+      "file": "assets/server/country.ea70d9f8.js",
       "src": "src/templates/country.tsx",
       "isEntry": true,
       "imports": [
-        "_index-de0714d2.js",
-        "_Breadcrumb-9d3cde28.js",
-        "_PageLayout-d9efef0d.js",
+        "_index-35061f12.js",
+        "_Breadcrumb-1eab4228.js",
+        "_PageLayout-f1c6abf7.js",
         "_global-790ced0b.js",
-        "_header-705bcaf7.js",
-        "_index-07a422aa.js"
+        "_header-64ea35cc.js",
+        "_index-f1b7cb60.js"
       ]
     },
     "dist/hydration_templates/location.tsx": {
-      "file": "assets/hydrate/location.4d1e8fb1.js",
+      "file": "assets/hydrate/location.913a12bd.js",
       "src": "dist/hydration_templates/location.tsx",
       "isEntry": true,
       "imports": [
-        "_index-fadde1ce.js",
+        "_index-04cd2aa4.js",
         "src/templates/location.tsx",
-        "_header-705bcaf7.js",
-        "_index-07a422aa.js",
-        "_index-989ba8f1.js",
-        "_index-de0714d2.js",
-        "_PageLayout-d9efef0d.js",
-        "_openClose-4268d798.js",
+        "_header-64ea35cc.js",
+        "_index-f1b7cb60.js",
+        "_index-027ca277.js",
+        "_index-35061f12.js",
+        "_PageLayout-f1c6abf7.js",
+        "_openClose-6c2e1672.js",
         "_global-790ced0b.js",
         "_preload-helper-094304c8.js",
-        "_Breadcrumb-9d3cde28.js"
+        "_Breadcrumb-1eab4228.js"
       ]
     },
     "src/templates/location.tsx": {
-      "file": "assets/server/location.f60ae60f.js",
+      "file": "assets/server/location.d7d35277.js",
       "src": "src/templates/location.tsx",
       "isEntry": true,
       "imports": [
-        "_index-989ba8f1.js",
-        "_openClose-4268d798.js",
-        "_PageLayout-d9efef0d.js",
-        "_index-07a422aa.js",
-        "_index-fadde1ce.js",
-        "_header-705bcaf7.js",
-        "_index-de0714d2.js",
+        "_index-027ca277.js",
+        "_openClose-6c2e1672.js",
+        "_PageLayout-f1c6abf7.js",
+        "_index-f1b7cb60.js",
+        "_index-04cd2aa4.js",
+        "_header-64ea35cc.js",
+        "_index-35061f12.js",
         "_preload-helper-094304c8.js",
-        "_Breadcrumb-9d3cde28.js",
+        "_Breadcrumb-1eab4228.js",
         "_global-790ced0b.js"
       ],
       "dynamicImports": [
-        "_index-de0714d2.js"
+        "_index-35061f12.js"
       ],
       "assets": [
         "assets/static/MGMpin-aad9d43b.svg"
       ]
     },
     "dist/hydration_templates/locator.tsx": {
-      "file": "assets/hydrate/locator.7cf960a8.js",
+      "file": "assets/hydrate/locator.0f635cd3.js",
       "src": "dist/hydration_templates/locator.tsx",
       "isEntry": true,
       "imports": [
-        "_index-fadde1ce.js",
+        "_index-04cd2aa4.js",
         "src/templates/locator.tsx",
-        "_header-705bcaf7.js",
-        "_index-07a422aa.js",
-        "_index-de0714d2.js",
-        "_PageLayout-d9efef0d.js",
-        "_openClose-4268d798.js",
+        "_header-64ea35cc.js",
+        "_index-f1b7cb60.js",
+        "_index-35061f12.js",
+        "_PageLayout-f1c6abf7.js",
+        "_openClose-6c2e1672.js",
         "_global-790ced0b.js",
-        "_index-989ba8f1.js",
-        "_server.browser-1e987e39.js"
+        "_index-027ca277.js",
+        "_server.browser-749961df.js"
       ]
     },
     "src/templates/locator.tsx": {
-      "file": "assets/server/locator.8bea43ed.js",
+      "file": "assets/server/locator.891e9a4f.js",
       "src": "src/templates/locator.tsx",
       "isEntry": true,
       "imports": [
-        "_index-de0714d2.js",
-        "_index-07a422aa.js",
-        "_header-705bcaf7.js",
-        "_PageLayout-d9efef0d.js",
-        "_openClose-4268d798.js",
-        "_index-989ba8f1.js",
+        "_index-35061f12.js",
+        "_index-f1b7cb60.js",
+        "_header-64ea35cc.js",
+        "_PageLayout-f1c6abf7.js",
+        "_openClose-6c2e1672.js",
+        "_index-027ca277.js",
         "_global-790ced0b.js",
-        "_server.browser-1e987e39.js"
+        "_server.browser-749961df.js"
       ],
       "css": [
         "assets/static/locator-7e1d7cb8.css"
@@ -257,112 +257,112 @@
       ]
     },
     "dist/hydration_templates/root.tsx": {
-      "file": "assets/hydrate/root.ca081cbf.js",
+      "file": "assets/hydrate/root.6e33bbde.js",
       "src": "dist/hydration_templates/root.tsx",
       "isEntry": true,
       "imports": [
-        "_index-fadde1ce.js",
+        "_index-04cd2aa4.js",
         "src/templates/root.tsx",
-        "_header-705bcaf7.js",
-        "_index-07a422aa.js",
-        "_Breadcrumb-9d3cde28.js",
-        "_index-de0714d2.js",
+        "_header-64ea35cc.js",
+        "_index-f1b7cb60.js",
+        "_Breadcrumb-1eab4228.js",
+        "_index-35061f12.js",
         "_global-790ced0b.js"
       ]
     },
     "src/templates/root.tsx": {
-      "file": "assets/server/root.f43491cf.js",
+      "file": "assets/server/root.9178129d.js",
       "src": "src/templates/root.tsx",
       "isEntry": true,
       "imports": [
-        "_header-705bcaf7.js",
-        "_Breadcrumb-9d3cde28.js",
-        "_index-de0714d2.js",
-        "_index-07a422aa.js",
+        "_header-64ea35cc.js",
+        "_Breadcrumb-1eab4228.js",
+        "_index-35061f12.js",
+        "_index-f1b7cb60.js",
         "_global-790ced0b.js"
       ]
     },
     "dist/hydration_templates/state.tsx": {
-      "file": "assets/hydrate/state.8bb4af32.js",
+      "file": "assets/hydrate/state.9ea4d722.js",
       "src": "dist/hydration_templates/state.tsx",
       "isEntry": true,
       "imports": [
-        "_index-fadde1ce.js",
+        "_index-04cd2aa4.js",
         "src/templates/state.tsx",
-        "_header-705bcaf7.js",
-        "_index-07a422aa.js",
-        "_index-de0714d2.js",
-        "_Breadcrumb-9d3cde28.js",
+        "_header-64ea35cc.js",
+        "_index-f1b7cb60.js",
+        "_index-35061f12.js",
+        "_Breadcrumb-1eab4228.js",
         "_global-790ced0b.js",
-        "_PageLayout-d9efef0d.js"
+        "_PageLayout-f1c6abf7.js"
       ]
     },
     "src/templates/state.tsx": {
-      "file": "assets/server/state.5df0a7fd.js",
+      "file": "assets/server/state.d6594cf5.js",
       "src": "src/templates/state.tsx",
       "isEntry": true,
       "imports": [
-        "_index-de0714d2.js",
-        "_Breadcrumb-9d3cde28.js",
-        "_PageLayout-d9efef0d.js",
+        "_index-35061f12.js",
+        "_Breadcrumb-1eab4228.js",
+        "_PageLayout-f1c6abf7.js",
         "_global-790ced0b.js",
-        "_header-705bcaf7.js",
-        "_index-07a422aa.js"
+        "_header-64ea35cc.js",
+        "_index-f1b7cb60.js"
       ]
     },
     "_preload-helper-094304c8.js": {
       "file": "assets/static/preload-helper-094304c8.js"
     },
-    "_index-07a422aa.js": {
-      "file": "assets/static/index-07a422aa.js"
+    "_index-f1b7cb60.js": {
+      "file": "assets/static/index-f1b7cb60.js"
     },
-    "_server.browser-1e987e39.js": {
-      "file": "assets/static/server.browser-1e987e39.js",
+    "_server.browser-749961df.js": {
+      "file": "assets/static/server.browser-749961df.js",
       "imports": [
-        "_index-07a422aa.js"
+        "_index-f1b7cb60.js"
       ]
     },
-    "_index-fadde1ce.js": {
-      "file": "assets/static/index-fadde1ce.js",
+    "_index-04cd2aa4.js": {
+      "file": "assets/static/index-04cd2aa4.js",
       "imports": [
-        "_index-07a422aa.js"
+        "_index-f1b7cb60.js"
       ]
     },
-    "_header-705bcaf7.js": {
-      "file": "assets/static/header-705bcaf7.js",
+    "_header-64ea35cc.js": {
+      "file": "assets/static/header-64ea35cc.js",
       "imports": [
-        "_index-07a422aa.js"
+        "_index-f1b7cb60.js"
       ]
     },
     "_global-790ced0b.js": {
       "file": "assets/static/global-790ced0b.js"
     },
-    "_PageLayout-d9efef0d.js": {
-      "file": "assets/static/PageLayout-d9efef0d.js",
+    "_PageLayout-f1c6abf7.js": {
+      "file": "assets/static/PageLayout-f1c6abf7.js",
       "imports": [
-        "_header-705bcaf7.js"
+        "_header-64ea35cc.js"
       ]
     },
-    "_openClose-4268d798.js": {
-      "file": "assets/static/openClose-4268d798.js",
+    "_openClose-6c2e1672.js": {
+      "file": "assets/static/openClose-6c2e1672.js",
       "imports": [
-        "_index-07a422aa.js",
-        "_header-705bcaf7.js",
-        "_index-de0714d2.js",
+        "_index-f1b7cb60.js",
+        "_header-64ea35cc.js",
+        "_index-35061f12.js",
         "_global-790ced0b.js",
-        "_PageLayout-d9efef0d.js"
+        "_PageLayout-f1c6abf7.js"
       ],
       "assets": [
         "assets/static/phone-4df45c02.svg",
         "assets/static/watch-icn-343fe80e.svg"
       ]
     },
-    "_index-de0714d2.js": {
-      "file": "assets/static/index-de0714d2.js",
+    "_index-35061f12.js": {
+      "file": "assets/static/index-35061f12.js",
       "isDynamicEntry": true,
       "imports": [
-        "_index-07a422aa.js",
-        "_header-705bcaf7.js"
+        "_index-f1b7cb60.js",
+        "_header-64ea35cc.js"
       ],
       "css": [
         "assets/static/index-18cd608a.css"
@@ -376,23 +376,23 @@
         "assets/static/shape-b-bdecdd2a.svg"
       ]
     },
-    "_Breadcrumb-9d3cde28.js": {
-      "file": "assets/static/Breadcrumb-9d3cde28.js",
+    "_Breadcrumb-1eab4228.js": {
+      "file": "assets/static/Breadcrumb-1eab4228.js",
       "imports": [
-        "_index-07a422aa.js",
-        "_header-705bcaf7.js",
-        "_index-de0714d2.js",
+        "_index-f1b7cb60.js",
+        "_header-64ea35cc.js",
+        "_index-35061f12.js",
         "_global-790ced0b.js"
       ]
     },
-    "_index-989ba8f1.js": {
-      "file": "assets/static/index-989ba8f1.js",
+    "_index-027ca277.js": {
+      "file": "assets/static/index-027ca277.js",
       "imports": [
-        "_index-07a422aa.js",
-        "_index-de0714d2.js",
-        "_header-705bcaf7.js",
-        "_PageLayout-d9efef0d.js",
-        "_openClose-4268d798.js"
+        "_index-f1b7cb60.js",
+        "_index-35061f12.js",
+        "_header-64ea35cc.js",
+        "_PageLayout-f1c6abf7.js",
+        "_openClose-6c2e1672.js"
       ],
       "assets": [
         "assets/static/red-map-358c08d3.svg"

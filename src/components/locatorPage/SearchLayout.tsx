@@ -382,10 +382,10 @@ const SearchLayout = (props: any): JSX.Element => {
               />
 
 
-              {locationinbuit && locationinbuit.length <= 0 ?
+              {/* {locationinbuit && locationinbuit.length <= 0 ?
                 <div className="browse-dir">
-                  <a className="underline " href='/gb.html'>Use the search above or <span className="font-second-main-font"> browse our directory</span></a>
-                </div> : ''}
+                  <h5>Use the search above or <span className="font-second-main-font"> browse our directory</span></h5>
+                </div> : ''} */}
               <div className="button-bx">
                 <ViewMore className={" btn notHighlight lg:!w-[132%] !mb-2 button view-more"} idName={"view-more-button"} buttonLabel={"View More"} />
               </div>
